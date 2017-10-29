@@ -44,7 +44,10 @@
 		 },
 
 		 value2input: function (value) {
-		 	CKEDITOR.instances.editor_input.setData(value);
+		 	CKEDITOR.on("instanceReady", function(event)
+			{
+		 		CKEDITOR.instances.editor_input.setData(value);
+			});
 		 },
 
 		 input2value: function () {
